@@ -1,0 +1,38 @@
+﻿<Window x:Class="DeliverMan.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DeliverMan"
+        mc:Ignorable="d"
+        Background="Black"
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen"
+        Title="DeliverMan" Height="450" Width="800">
+    <StackPanel>
+        <StackPanel Background="#FF9E9E9E" Margin="0,0,0,50"/>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20"></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center">
+                <TextBlock Foreground="White">Url:</TextBlock>
+                <TextBox Width="500" Height="20"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="1" Grid.Column="0" Margin="20,0,20,0" x:Name="get_box">
+                <TextBlock Foreground="White">Get:</TextBlock>
+            </StackPanel>
+
+            <StackPanel Grid.Row="1" Grid.Column="1" x:Name="post_box">
+                <TextBlock Foreground="White">Get:</TextBlock>
+            </StackPanel>
+        </Grid>
+    </StackPanel>
+</Window>
