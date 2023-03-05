@@ -10,20 +10,26 @@
         WindowStartupLocation="CenterScreen"
         Title="DeliverMan" Height="450" Width="800">
     <StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button>Minimize</Button>
+            <Button Click="Close_button">Close</Button>
+        </StackPanel>
         <StackPanel Background="#FF9E9E9E" Margin="0,0,0,50"/>
         <Grid>
             <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="20"></RowDefinition>
                 <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
 
             <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center">
                 <TextBlock Foreground="White">Url:</TextBlock>
-                <TextBox Width="500" Height="20"/>
+                <TextBox Width="500" Height="20" x:Name="url_box"/>
             </StackPanel>
 
             <StackPanel Grid.Row="1" Grid.Column="0" Margin="20,0,20,0" x:Name="get_box">
@@ -31,7 +37,19 @@
             </StackPanel>
 
             <StackPanel Grid.Row="1" Grid.Column="1" x:Name="post_box">
-                <TextBlock Foreground="White">Get:</TextBlock>
+                <TextBlock Foreground="White">Post:</TextBlock>
+            </StackPanel>
+
+            <StackPanel Grid.Row="2" Grid.Column="0">
+                <Button Background="Black" Foreground="White" BorderBrush="White" BorderThickness="1,1,0,1" Click="GetRequest">Send</Button>
+            </StackPanel>
+
+            <StackPanel Grid.Row="2" Grid.Column="1">
+                <Button Background="Black" Foreground="White" BorderBrush="White">Send</Button>
+            </StackPanel>
+
+            <StackPanel Grid.Row="0" Grid.Column="2" Grid.RowSpan="3">
+                <TextBlock x:Name="response_box"></TextBlock>
             </StackPanel>
         </Grid>
     </StackPanel>

@@ -42,7 +42,7 @@ namespace DeliverMan
 
             sp.Children.Add(key_tb);
             sp.Children.Add(value_tb);
-            sp.Orientation= Orientation.Horizontal;
+            sp.Orientation = Orientation.Horizontal;
             if (mode == 0)
             {
                 get_box.Children.Add(sp);
@@ -53,6 +53,30 @@ namespace DeliverMan
             }
         }
 
+        private void PostRequest(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void GetRequest(object sender, RoutedEventArgs e)
+        {
+            HttpControl hc = new HttpControl(url_box.Text);
+            Dictionary<String, String> map = new Dictionary<String, String>();
+            map.Add("test", "TEst0");
+            UpdateResponse(hc.Get(map));
+        }
+
+        private async void UpdateResponse(Task<String> response)
+        {
+            response_box.Text += response.Result;
+        }
+
+        private void Close_button(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             ((TextBox)sender).TextChanged -= TextBox_TextChanged;
@@ -61,3 +85,6 @@ namespace DeliverMan
         }
     }
 }
+
+    
+
